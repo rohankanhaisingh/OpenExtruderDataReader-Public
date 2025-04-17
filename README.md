@@ -1,6 +1,7 @@
 # Open Extruder Data Reader
 
 ![Open Extruder Data Reader](./OpenExtruderDataReader_screenshot_1.png)
+![Open Extruder Data Reader](./OpenExtruderDataReader_screenshot_2.png)
 
 > **Let op:** Dit project is een stageopdracht ontwikkeld door Rohan Kanhaisingh voor het bedrijf Schmitz Foam B.V. Het is bedoeld als educatief project en is niet bestemd voor commercieel gebruik. Mogelijke fouten of onvolkomenheden kunnen aanwezig zijn. Gebruik op eigen risico.
 
