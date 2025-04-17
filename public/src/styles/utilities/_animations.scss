@@ -1,0 +1,34 @@
+/*
+    
+    Definities voor alle animaties.
+
+    Na elk @keyframes configuratie moet er een mixin worden gemaakt
+    met dezelfde naam. In de mixin word de code geschreven dat de animatie 
+    in stand brengt.
+*/
+
+@keyframes BasicFadeinAnimation {
+    from {
+        -moz-transform: translateY(-20px);
+        -ms-transform: translateY(-20px);
+        -o-transform: translateY(-20px);
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        -webkit-transform: none;
+        transform: none;
+        opacity: 1;
+    }
+}
+
+@mixin BasicFadeinAnimation {
+    -moz-animation: BasicFadeinAnimation var(--transition-key) 1s;
+    -o-animation: BasicFadeinAnimation var(--transition-key) 1s;
+    -webkit-animation: BasicFadeinAnimation var(--transition-key) 1s;
+    animation: BasicFadeinAnimation var(--transition-key) 1s;
+}

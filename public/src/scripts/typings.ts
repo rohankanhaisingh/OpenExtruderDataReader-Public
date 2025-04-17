@@ -1,0 +1,96 @@
+export interface TimelineData {
+	[K: string]: string;
+}
+
+export interface ExtruderData {
+   readonly "Time": string;
+   readonly "Setting temperature zone 1": number;
+   readonly "Actual temperature zone 1": number;
+   readonly "Setting temperature zone 2": number;
+   readonly "Actual temperature zone 2": number;
+   readonly "Setting temperature zone 3": number;
+   readonly "Actual temperature zone 3": number;
+   readonly "Setting temperature zone 4": number;
+   readonly "Actual temperature zone 4": number;
+   readonly "Setting temperature zone 5": number;
+   readonly "Actual temperature zone 5": number;
+   readonly "Setting temperature head 1": number;
+   readonly "Actual temperature head 1":number;
+   readonly "Setting temperature head 2": number;
+   readonly "Actual temperature head 2":number;
+   readonly "Setting temperature head 3": number;
+   readonly "Actual temperature head 3":number;
+   readonly "Setting temperature head 4": number;
+   readonly "Actual temperature head 4":number;
+   readonly "Setting temperature head 5": number;
+   readonly "Actual temperature head 5":number;
+   readonly "Setting temperature neck": number;
+   readonly "Actual temperature neck":number;
+   readonly "Setting temperature flange": number;
+   readonly "Actual temperature flange":number;
+   readonly "Actual PE temperature":number;
+   readonly "Actual PE pressure": number;
+   readonly "Actual extruder current": number;
+   readonly "Actual extruder speed": number;
+   readonly "Actual exit feeder current": number;
+   readonly "Actual exit feeder speed": number;
+   readonly "Actual feeder current": number;
+   readonly "Actual feeder position": number;
+   readonly "Actual feeder speed": number;
+   readonly "Actual screw speed": number;
+   readonly "ExActUpperFeederCurrent": number;
+   readonly "ExActUpperFeederSpeed": number;
+   readonly "ExActWinderCurrent": number;
+   readonly "ExActWinderSpeed": number;
+   readonly "Material 1": string;
+   readonly "Material Type \\ batch 1": string;
+   readonly "Material ammount 1": number;
+   readonly "Material 2": string;
+   readonly "Material Type \\ batch 2":string;
+   readonly "Material ammount 2": number;
+   readonly "Material 3": string;
+   readonly "Material Type \\ batch 3": string;
+   readonly "Material ammount 3": number;
+   readonly "Material 4": string;
+   readonly "Material Type \\ batch 4": string;
+   readonly "Material ammount 4": number;
+   readonly "Material 5": string;
+   readonly "Material Type \\ batch 5": string;
+   readonly "Material ammount 5": number;
+   readonly "Material 6": string;
+   readonly "Material Type \\ batch 6": string;
+   readonly "Material ammount 6": string;
+   readonly "Material 7": string;
+   readonly "Material Type \\ batch 7": string;
+   readonly "Material ammount 7": number;
+   readonly "TrolleyNumber": number;
+   readonly "TrolleyCounter": string;
+   readonly "TrolleyTagNumber": number;
+   readonly "TrolleyProdNr": number;
+   readonly "TrolleyRunNr": number;
+   readonly "TrolleySheetNr": number;
+   readonly "TrolleyRecipe": number;
+   readonly "TrolleyStart": string;
+   readonly "TrolleyStop": string;
+   readonly "TrolleyLength": number;
+   readonly "TrolleyWeight": number;
+   readonly "TrolleyClassification": string;
+   readonly "WinderLength": number;
+   readonly "Thickness left": number;
+   readonly "Thickness middle left": number;
+   readonly "Thickness middle right": number;
+   readonly "Thickness right": number;
+   readonly "Ambient temperature": number;
+   readonly "Chiller inlet temperature": number;
+   readonly "Chiller outlet temperature": number;
+   readonly "Screwcooling flow": number;
+   readonly "Screwcooling inlet temperature": number;
+   readonly "Screwcooling outlet temperature": number;
+   readonly "Extruder housing temperature": number;
+   readonly "ProductionInfostring": string;
+}
+
+export interface ExtruderUptimeData {
+	readonly upTime: number;
+	readonly downTime: number;
+}

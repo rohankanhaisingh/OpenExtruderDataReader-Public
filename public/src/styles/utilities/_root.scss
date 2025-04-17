@@ -1,0 +1,40 @@
+@use "./_accents" as accents;
+
+:root {
+    // Overige definities.
+    --accent-color: #{accents.$accentColor};
+    --transition-key: cubic-bezier(0.1, 0.9, 0.2, 1);
+    --transition-duration: .3s;
+    --icon-filter: none;
+    --default-font-family: "Segoe UI", "Lucida Sans","Lucida Sans Regular","Lucida Grande","Lucida Sans Unicode",Geneva,Verdana,sans-serif;
+    --base-border-radius: 5px;
+    --transition-key: cubic-bezier(0.1, 0.9, 0.2, 1);
+    --transition-duration: .3s;
+    // Kleuren definities.
+    --primary-background-color: #{accents.$primaryBackgroundColor};
+    --secondary-background-color: #{accents.$secondaryBackgroundColor};
+    --primary-text-color: #{accents.$primaryTextColor};
+    --accent-color: #{accents.$accentColor};
+    --control-background-color: #{accents.$controlBackgroundColor};
+    --control-background-color-hover: #{accents.$controlBackgroundColorHover};
+    --control-text-color: #{accents.$controlTextColor};
+    // Stijl voor het pagina indeling
+    --base-grid-gap: 0;
+    // Stijl definities voor het navbar elemnent
+    --navbar-base-width: 100vw;
+    --navbar-base-height: 50px;
+    --navbar-horizontal-padding: 20px;
+    --navbar-vertical-padding: 10px;
+    // Stijl definities voor het side-menu element.
+    --side-menu-base-width: 240px;
+    --side-menu-base-height: calc(100vh - var(--navbar-base-height));
+    --side-menu-horizontal-padding: 10px;
+    --side-menu-vertical-padding: 0;
+    --side-menu-button-height: 20px;
+    --side-menu-button-horizontal-padding: 10px;
+    --side-menu-button-vertical-padding: 15px;
+    --side-menu-button-icon-size: 20px;
+    // Stijl definities voor het content element.
+    --base-content-horizontal-padding: 40px;
+    --base-content-vertical-padding: 40px;
+}

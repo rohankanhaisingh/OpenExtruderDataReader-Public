@@ -1,0 +1,86 @@
+.app-side_menu {
+    max-width: calc(var(--side-menu-base-width) - (var(--side-menu-horizontal-padding) * 2));
+    padding: var(--side-menu-vertical-padding) var(--side-menu-horizontal-padding);
+
+    &__button {
+        width: calc(100% - 20px);
+        height: var(--side-menu-button-height);
+        padding: var(--side-menu-button-vertical-padding) var(--side-menu-button-horizontal-padding);
+        border-radius: var(--base-border-radius);
+        display: grid;
+        grid-template-columns: 5px var(--side-menu-button-icon-size) auto;
+        gap: 5px;
+        user-select: none;
+        align-items: center;
+        font-size: 15px;
+
+        div {
+            width: 1px;
+            height: 0;
+            border-radius: 5px;
+            background: var(--accent-color);
+            -moz-transition: all var(--transition-key) var(--transition-duration);
+            -o-transition: all var(--transition-key) var(--transition-duration);
+            -webkit-transition: all var(--transition-key) var(--transition-duration);
+            transition: all var(--transition-key) var(--transition-duration);
+        }
+
+        span {
+            margin-left: 10px;
+        }
+
+        img {
+            width: var(--side-menu-button-icon-size);
+            height: var(--side-menu-button-icon-size);
+            pointer-events: none;
+            -moz-filter: var(--icon-filter);
+            -webkit-filter: var(--icon-filter);
+            filter: var(--icon-filter);
+            -moz-transition: transform var(--transition-key) var(--transition-duration);
+            -o-transition: transform var(--transition-key) var(--transition-duration);
+            -webkit-transition: transform var(--transition-key) var(--transition-duration);
+            transition: transform var(--transition-key) var(--transition-duration);
+        }
+
+        &.active {
+            background: var(--control-background-color-active);
+
+            div {
+                height: 80%;
+                width: 3px;
+            }
+        }
+
+        &:not(.active):hover {
+            background: var(--control-primary-border-color-hover);
+
+            div {
+                height: 30%;
+            }
+        }
+
+        &:not(.active):active {
+
+            div {
+                height: 30%;
+                width: 3px;
+            }
+
+            img {
+                -moz-transform: scale(.8);
+                -ms-transform: scale(.8);
+                -o-transform: scale(.8);
+                -webkit-transform: scale(.8);
+                transform: scale(.8);
+            }
+        }
+    }
+
+    &__seperator {
+        width: 30%;
+        height: 2px;
+        background: var(--accent-color);
+        border-radius: 5px;
+        margin: 20px auto;
+    }
+}

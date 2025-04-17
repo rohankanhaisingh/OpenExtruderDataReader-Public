@@ -1,0 +1,48 @@
+import "core:http";
+
+func Main(args: string[]) {
+
+    if(args["ip-address"] exists) {
+        throw "Kan geen gegevens sturen naar server, want IP adres mist als argument.";
+    }
+
+    // Get the 'ip-address' flag.
+    var ipAddress: string = args["ip-address"];
+    var port: int = 8000;
+
+    // Resolve the path based on the current path.
+    var pathOfFile: string = Resolve-Path -BaseDirectory curval -Path "data/extruder_data.csv";
+
+    // Read the file content, and use the UTF-8 encoding to make it readable.
+    var fileContents: string = Read-File -Path pathOfFile -Encoding "utf-8";
+
+    // Create a new HTTP request.
+    var request: HttpRequest = New-Instance HttpRequest -Url "http://" + ipAddress;
+
+    // Set the request method to POST.
+    request::Set-RequestMethod "POST";
+
+    // Set some headers so the server understands the type of request.
+    request::Set-Headers -ContentType "application/text" -ContentLength (Get-BufferByteLength -FromString fileContents);
+
+    // Set the request body.
+    request::Set-Body fileContents;
+
+    try {
+
+        // Start the request and store the return value as HttpResponse.
+        var response: HttpResponse = request::Start-Request;
+
+        // Get the reponse status code.
+        var responseStatusCode: int = response::Get-ResponseStatusCode;
+
+        if(responseStatusCode !== 200) {
+            Write-Host "Fout tijdens het versturen van gegevens naar de server. Ontvangen code: " + responseStatusCode -ForegroundColor "red";
+        } else {
+            Write-Host "Gegevens succesvol verstuurd naar de server.";
+        }
+    } catch(error: Error) {
+
+        throw error;
+    }
+}

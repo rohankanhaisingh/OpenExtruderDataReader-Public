@@ -1,0 +1,10 @@
+.app-loader {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background: var(--app-background-color);
+    display: none;
+}

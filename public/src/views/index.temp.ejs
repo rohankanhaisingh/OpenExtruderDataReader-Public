@@ -1,0 +1,124 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Grafiek weergave</title>
+    <%- include ./partials/_head -%>
+</head>
+<body>
+
+    <div class="app">
+        <div class="container app-gridbox">
+
+            <%- include ./partials/_navbar -%>
+            <%- include ./partials/_loader -%>
+
+            <div class="app-content">
+                <div class="app-chart-visualization">
+                    <div class="app-component chart-renderer-container mb-20" data-name="Activiteit">
+                        <div id="chart-renderer-container"></div>
+                    </div>
+                    <div class="app-component chart-options mb-20">
+                        <div class="chart-options__option">
+                            <span>Extruder data type: </span>
+                            <select id="extruder-data-keys" class="app-control-component"></select>
+                        </div>
+
+                        <div class="chart-options__option">
+                            <span>Tijdsbereik: </span>
+                            <select id="chart-time-range" class="app-control-component">
+                                <option value="10">10 seconde</option>
+                                <option value="20">20 seconde</option>
+                                <option value="30">30 seconde</option>
+                                <option value="40">40 seconde</option>
+                                <option value="50">50 seconde</option>
+                                <option value="60">1 minuut</option>
+                                <option value="120">2 minuten</option>
+                            </select>
+                        </div>
+
+                        <div class="chart-options__option">
+                            <span>Importeer bestand: </span>
+                            <input class="app-control-component" type="file" name="file-upload" value="" accept=".csv"/>
+                        </div>
+
+                        <div class="chart-options__option">
+                            <span>Verwijder data</span>
+                            <button class="app-control-component">Verwijder</button>
+                        </div>
+                    </div>
+                    <div class="chart-circle-and-history-container">
+                        <div class="app-component chart-circle-renderer-container" data-name="Cirkel diagram"></div>
+                        <div class="app-component chart-history-container" data-name="Geschiedenis"></div>
+                    </div>
+                </div>
+                <div class="app-component app-rawdata-container app-rawdata" data-name="Overige data">
+                    <div class="app-rawdata__scroller">
+
+                        <div class="app-rawdata__item">
+                            <span>Applicatie versie:</span>
+                            <span>0.0.5</span>
+                        </div>
+
+                        <div class="app-rawdata__item">
+                            <span>Grafiek delta-tijd:</span>
+                            <span id="rawdata-span-deltatime">5ms</span>
+                        </div>
+
+                        <div class="app-rawdata__item">
+                            <span>Frame-rate:</span>
+                            <span id="rawdata-span-framerate">0FPS</span>
+                        </div>
+
+                        <div class="app-rawdata__category static">
+                            <div class="app-rawdata__item">
+                                <span>Huidige datum:</span>
+                                <span>06-03-2024</span>
+                            </div>
+                            <div class="app-rawdata__item">
+                                <span>Huidige tijd:</span>
+                                <span>09:00</span>
+                            </div>
+                            <div class="app-rawdata__item">
+                                <span>Extruder uptime:</span>
+                                <span>00:00:00</span>
+                            </div>
+                            <div class="app-rawdata__item">
+                                <span>Extruder downtime:</span>
+                                <span>00:00:00</span>
+                            </div>
+                            <div class="app-rawdata__item">
+                                <span>Reliance 4 latency:</span>
+                                <span>00:01:00</span>
+                            </div>
+                        </div>
+
+                        <div class="app-rawdata__category static">
+                            <div class="app-rawdata__item">
+                                <span>Inkomende pakketten:</span>
+                                <span>0</span>
+                            </div>
+                            <div class="app-rawdata__item">
+                                <span>Uitgaande pakketten:</span>
+                                <span>0</span>
+                            </div>
+                        </div>
+
+                        <div class="app-rawdata__category static">
+                            <div class="app-rawdata__item">
+                                <span>Gemiddelde temperatuur:</span>
+                                <span>50 graden (C)</span>
+                            </div>
+                            <div class="app-rawdata__item">
+                                <span>Uitgaande pakketten:</span>
+                                <span>0</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+  
+</body>
+</html>

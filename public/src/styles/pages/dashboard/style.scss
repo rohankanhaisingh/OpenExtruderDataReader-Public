@@ -1,0 +1,142 @@
+/**
+    Dashboard pagina stijl definities.
+
+    In dit document krijgen alle elementen een stijl die 
+    alleen in deze pagina te zien is.
+    
+    Dit document wordt geimporteerd vanuit het 'dashboard.ts' bestand
+    in de root bestandsfolder. Beide bestanden worden uiteindelijk gecompileerd
+    tot een chunk van bestanden.
+*/
+
+@import "./widget";
+
+.app-content {
+    background: #335a82;
+    color: #fff;
+}
+
+.app-content-spacer {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+hr {
+    border: 1px solid #2f547b;
+    margin: 40px 0;
+}
+
+.dashboard-welcome-display {
+    width: 100%;
+    height: 70px;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    font-size: 60px;
+}
+
+.dashboard-control-container {
+    width: 100%;
+    height: 30px;
+    margin: 20px 0;
+}
+
+.dashboard-widget-container {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-gap: 20px;
+    margin: 20px 0;
+}
+
+.dashboard-three-layered-grid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin: 20px 0;
+}
+
+.dashboard-four-layered-grid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    margin: 20px 0;
+}
+
+.dashboard-extruder-time-chart {
+    width: calc(100% - 40px);
+    height: 420px;
+    padding: 20px;
+    border-radius: var(--base-border-radius);
+    margin-bottom: 100px;
+    background: $widgetBackground;
+    box-shadow: $widgetBoxShadow;
+}
+
+#dashboard-chart-container {
+    width: calc(100% - 40px);
+    padding: 20px;
+    overflow: hidden;
+    border-radius: var(--base-border-radius);
+    background: $widgetBackground;
+    -moz-animation: WidgetFadeIn 1s var(--transition-key);
+    -o-animation: WidgetFadeIn 1s var(--transition-key);
+    -webkit-animation: WidgetFadeIn 1s var(--transition-key);
+    animation: WidgetFadeIn 1s var(--transition-key);
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    canvas {
+        width: 4000px;
+        max-height: 420px;
+    }
+}
+
+.dashboard-chart-controls-container {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+
+    select, span, button {
+        width: auto;
+        height: auto;
+    }
+
+    select, button, input {
+        background: #43678c;
+        padding: 5px 10px;
+        border-radius: var(--base-border-radius);
+        align-items: center;
+        color: #fff;
+        font-size: 13px;
+        border: none;
+        
+        &:hover {
+            background: #6c96c1;
+        }
+    }
+
+    button {
+        display: grid;
+        grid-template-columns: 30px auto;
+        grid-gap: 0;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

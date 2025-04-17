@@ -1,0 +1,10 @@
+.app-navbar {
+    max-height: var(--navbar-base-height);
+    padding: var(--navbar-vertical-padding) var(--navbar-horizontal-padding);
+
+    &__title {
+        font-size: 20px;
+        font-family: var(--default-font-family);
+        margin: 0px 0;
+    }
+}

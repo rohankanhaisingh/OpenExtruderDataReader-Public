@@ -1,0 +1,98 @@
+@use "../../utilities/_mixins" as Mixins;
+@use "../../utilities/_animations" as Animations;
+
+// De kleur van de widget moet lijken op kleur gedefineerd als '$accentColor'.
+// Zie bestand 'public/src/styles/utilities/_accents.scss' voor meer informatie.
+$widgetBackground: #43678c;
+
+$widgetTextColor: #fff;
+$widgetBoxShadow: 0 0 10px rgb(0 0 0 / 0%);
+
+
+.dashboard-simple-widget {
+    background: $widgetBackground;
+    box-shadow: $widgetBoxShadow;
+    color: $widgetTextColor;
+
+    display: grid;
+    padding: 20px;
+    grid-template-rows: 50px 110px auto;
+    gap: 20px;
+    border-radius: var(--base-border-radius);
+    user-select: none;
+    -moz-animation: WidgetFadeIn 1s var(--transition-key);
+    -o-animation: WidgetFadeIn 1s var(--transition-key);
+    -webkit-animation: WidgetFadeIn 1s var(--transition-key);
+    animation: WidgetFadeIn 1s var(--transition-key);
+
+    @include Mixins.BasicTransition;
+    @include Animations.BasicFadeinAnimation;
+
+    &__layer-1 {
+        display: grid;
+
+        span:nth-child(1) {
+            font-size: 15px;
+        }
+
+        span:nth-child(2) {
+            font-size: 12px;
+            color: #e9e9e9;
+        }
+    }
+
+    &__layer-2 {
+        display: grid;
+        grid-template-columns: 70px auto;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 70px;
+            height: 70px;
+        }
+
+        &__text {
+            display: grid;
+            grid-template-rows: auto auto;
+            font-size: 15px;
+
+            span:nth-child(1) {
+                font-size: 40px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__layer-3 {
+
+        table {
+            text-align: center;
+            color: #fff;
+            width: 100%;
+
+            td {
+                padding: 5px;
+            }
+
+            th {
+                font-size: 12px;
+                font-weight: 100;
+            }
+
+            td {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 10px 10px rgb(0 0 0 / 20%);
+        background: #1c3a59;
+        -moz-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
+        -o-transform: translateY(-10px);
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
+}

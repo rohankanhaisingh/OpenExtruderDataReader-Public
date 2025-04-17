@@ -1,0 +1,25 @@
+button[type=button] {
+    width: auto;
+    height: auto;
+    float: left;
+    margin-right: 10px;
+    display: grid;
+    grid-template-columns: 30px auto;
+    grid-gap: 0;
+    background: var(--control-background-color);
+    padding: 5px 10px;
+    border-radius: var(--base-border-radius);
+    align-items: center;
+    color: var(--control-text-color);
+    font-size: 13px;
+    cursor: pointer;
+
+    img {
+        width: 20px;
+        height: 20px;
+    }
+
+    &:hover {
+        background: var(--control-background-color-hover);
+    }
+}

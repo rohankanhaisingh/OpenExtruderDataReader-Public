@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <%- include partials/_head -%>
+    <title>Dashboard | Open Extruder Data Reader</title>
+</head>
+<body class="app-body spa-app webapp-body ejs-rendered">
+    <div class="app spa-app root app-root">
+        <div class="app__gridbox">
+
+            <%- include partials/_navbar -%>
+
+            <div class="app-grid-placement">
+
+                <%- include partials/_side-menu -%>
+
+                <div class="app-content">
+                    <div class="app-content-spacer">
+                        <h1>Dashboard</h1>
+                        <p>Op deze pagina kun je een .csv bestand importeren dat genereerd is door de extruder.</p>
+
+                        <hr />
+
+                        <div class="dashboard-control-container">
+                            <button class="schmitz-button" type="button" title="Importeer bestand" id="dashboard-button-upload-file">
+                                <img src="/static/icons/icon-color-xls.png" alt="Importeer bestand" />
+                                <span>Importeer bestand</span>
+                            </button>
+
+                            <a href="/history">
+                                <button type="button" title="Download bestand als JSON">
+                                    <img src="/static/icons/icon-color-history.png" alt="History" />
+                                    <span>Geschiedenis</span>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <%- include ./partials/_footer -%>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">(function () { document.querySelector("#side-menu-button-dashboard").classList.add("active")})();</script>
+</body>
+</html>
